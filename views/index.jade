@@ -1,0 +1,246 @@
+extends ./layout/layout
+
+block styles
+  link(rel='stylesheet', href='/stylesheets/style.css')
+block content
+  .toast#toastId
+  .loading#loading 下拉加载...
+  .index_head
+    nav
+      a.index_button.current(type="0" href="javascript:void(0)")
+        span.text 关注
+        i.bgcur
+      a.index_button(type="1" href="javascript:void(0)")
+        span.text 热门
+        i.bgcur
+    .index_search
+  
+  .index_nav
+    .wrap
+      ul.index_nav_date
+        li(data-index="7") 周一
+        li(data-index="6") 周二
+        li(data-index="5") 周三
+        li(data-index="4") 周四
+        li(data-index="3") 周五
+        li(data-index="2") 昨天
+        li.act(data-index="1") 今天
+  
+  .container#containerId
+    ul.page#pageId1(type="0")
+      li.index_con(data-ind="1")
+        .index_con
+          .index_con_head
+            .index_con_head_nav.blue 奇幻
+            .index_con_head_auth 花道士
+            .index_con_head_more 全集
+          .index_con_center
+            img(src="http://f2.kkmh.com/image/161007/9bkpwd8rv.webp-w750.jpg")
+          .index_con_footer
+            .index_con_footer_title 第15话 狸猫变人!狸猫变人!
+            .index_con_footer_ding
+              i
+              | 17万
+            .index_con_footer_comment
+              i
+              | 2692
+        .index_con
+          .index_con_head
+            .index_con_head_nav.orange 爆笑
+            .index_con_head_auth 教主，注意名声！
+            .index_con_head_more 全集 >
+          .index_con_center
+            img(src="http://f2.kkmh.com/image/151223/itrnuetp3.webp-w750.jpg")
+          .index_con_footer
+            .index_con_footer_title 第15话 狸猫变人!狸猫变人!
+            .index_con_footer_ding
+              i
+              | 17万
+            .index_con_footer_comment
+              i
+              | 2692
+  .index_guide_scroll
+  .index_footer
+    ul.index_footer_list
+      li.act
+        i.index_footer_list_home
+        span 漫画
+      li
+        i.index_footer_list_discover
+        span 发现
+      li.act
+        i.index_footer_list_feed
+        span V社区
+      li.act
+        i.index_footer_list_me
+        span 我的
+
+block scripts
+  script(src="/resource/js/zepto.min.js")
+  script(src="/resource/js/fx.js")
+  script(src="/resource/js/touchslider.js")
+  script(src="/resource/js/drag-loading.js")
+  script.
+    function showToast(msg){
+      $(".toast").hide().html(msg).show();
+      var timer = setTimeout(function(){$(".toast").hide()},3e3);
+    }
+    function updateNavPos(index){
+      var msg = $(".index_button.current>.text").html()+","+$(".index_nav_date>li").eq($(".index_nav_date>li").length-index-1).html();
+      showToast(msg);
+
+      $(".page.active").css("height",$(".page.active>li.index_con").eq(index).height());
+
+      var flb_w=0;
+      var fl_w=$(".index_nav>.wrap").width();
+      var idx = $(".index_nav_date li").length-index-1;
+      fnl_x =  parseInt($(".index_nav_date li").eq(idx).position().left);
+      nav_w=$(".index_nav_date li").eq(idx).width();
+      // $(".sideline").stop(true);
+      // $(".sideline").animate({left:$(".find_nav_list li").eq(this.p).position().left},300);
+      // $(".sideline").animate({width:nav_w},100);
+      // $(".index_nav_date li").eq(this.p).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+      var fn_w = ($(".index_nav").width() - nav_w) / 2;
+
+      var fnl_l;
+      if (fnl_x <= fn_w) {
+        fnl_l = 0;
+      } else if (fn_w - fnl_x <= flb_w - fl_w) {
+        fnl_l = flb_w - fl_w;
+      } else {
+        fnl_l = fn_w - fnl_x;
+      }
+      $(".index_nav>.wrap").animate({
+        "left" : fnl_l
+      }, 300);
+    }
+    var swiper = null;
+    var dataIndex=0,pageCount=$(".page.active>.index_con").length;
+    var opt = {
+     id:"pageId2",
+     'auto':'-1',
+     fx:'ease-out',
+     direction:'left',
+     speed:600,
+     timeout:5000,
+     'before':function(index){
+       // 导航切换
+      $(".index_nav_date>li").removeClass("act");
+      var idx = $(".index_nav_date>li").length-index-1;
+      $(".index_nav_date>li").eq(idx).addClass("act");
+
+      updateNavPos(index);
+      }
+    }
+    function initSwiper(id){
+      opt.id=id;
+      if(swiper){
+        swiper.updateId(opt);
+      }else{
+        swiper=new TouchSlider(opt);
+      }
+    }
+
+    function initNav(){
+      updateNavPos($(".index_nav li.act").attr("data-index")-1);
+      $(".index_nav li").on('click', function(){
+      	updateNavPos($(this).attr("data-index")-1);
+        dataIndex= parseInt($(this).attr('data-index'))-1;
+        $(".page.active").css("left",-(dataIndex*100)+"%");
+      });
+
+      var fl_w=$(".index_nav>.wrap").width();
+      var flb_w=0;
+      $(".index_nav>.wrap").on('touchstart', function (e) {
+
+      	// var touch1 = e.originalEvent.targetTouches[0];
+        var touch1 = e.touches[0];
+      	x1 = touch1.pageX;
+      	y1 = touch1.pageY;
+      	ty_left = parseInt($(this).css("left"));
+      });
+      $(".index_nav>.wrap").on('touchmove', function (e) {
+      	// var touch2 = e.originalEvent.targetTouches[0];
+        var touch2 = e.touches[0];
+      	var x2 = touch2.pageX;
+      	var y2 = touch2.pageY;
+      	if(ty_left + x2 - x1>=0){
+      		$(this).css("left", 0);
+      	}else if(ty_left + x2 - x1<=flb_w-fl_w){
+      		$(this).css("left", flb_w-fl_w);
+      	}else{
+      		$(this).css("left", ty_left + x2 - x1);
+      	}
+      	if(Math.abs(y2-y1)>0){
+      		e.preventDefault();
+      	}
+      });
+      // 获取当前导航类型
+      var type = $(".index_button.current").attr("type");
+      // 内容区域切换，真实环境这步应该loading，而不是切换page
+      $(".page").removeClass("active").eq(type).addClass("active");
+    }
+    function initCurrentPage(){
+    	$('.index_nav_date').children().each(function(){
+    		$(this).click(function(){
+    			$('.index_nav_date').children().each(function(){
+    				$(this).attr('class','');
+    				$('.data-index').attr('style','display:none;');
+    			});
+    			$(this).attr('class','act');
+
+          dataIndex= parseInt($(this).attr('data-index'))-1;
+
+          $(".page.active").css("left",-(dataIndex*100)+"%")
+    		});
+    	});
+    }
+    $(function(){
+      // 下拉更新
+      new DragLoading($('#loading'), {
+          onReload: function () {
+              var self = this;
+              setTimeout(function () {
+                  showToast("Loading...")
+                  self.origin();
+              }, 2000* Math.random());
+          }
+      });
+
+      initNav();
+      initSwiper($(".page.active").attr("id"));
+      initCurrentPage();
+      //导航切换事件
+      $("nav>.index_button").on("click",function(evt){
+        $("nav>.index_button").removeClass("current");
+        $(this).addClass("current");
+
+        // 获取当前导航类型
+        var type = $(this).attr("type");
+
+        // 内容区域切换，真实环境这步应该loading，而不是切换page
+        $(".page").removeClass("active").eq(type).addClass("active");
+
+        //重新赋值
+        dataIndex=0,pageCount=$(".page.active>.index_con").length;
+
+        $(".index_nav_date li").removeClass("act");
+        $(".index_nav_date li:last-child").addClass("act");
+        initNav();
+        // swiper切换块id
+        initSwiper($(".page.active").attr("id"));
+
+        $(".page.active>.index_con:first-child").css("margin-left",-(dataIndex*100)+"%");
+      });
+
+    });
+    var throttle = function(delay, action){
+      var last = 0;
+      return function(){
+        var curr = +new Date()
+        if (curr - last > delay){
+          action.apply(this, arguments)
+          last = curr
+        }
+      }
+    }

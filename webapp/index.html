@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>快看</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <!-- <meta name="full-screen" content="yes"> -->
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <!-- <meta name="browsermode" content="application"> -->
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="./css/index.css"/>
+
+</head>
+<body>
+  <div class="toast" id="toastId"></div>
+  <div id="loading" class="loading">下拉加载...</div>
+	<!-- 头部 -->
+	<div class="index_head">
+    <nav>
+      <a href="javascript:void(0)" class="index_button current" type="0">
+        <span class="text">关注</span>
+        <i class="bgcur"></i>
+      </a>
+  		<a href="javascript:void(0)" class="index_button" type="1">
+        <span class="text">热门</span>
+        <i class="bgcur"></i>
+      </a>
+    </nav>
+		<div class="index_search"></div>
+	</div>
+	<!-- 日期 -->
+	<div class="index_nav">
+    <div class="wrap">
+  		<ul class="index_nav_date">
+        <li data-index="7">周一</li>
+  			<li data-index="6">周二</li>
+  			<li data-index="5">周三</li>
+  			<li data-index="4">周四</li>
+        <li data-index="3">周五</li>
+  			<li data-index="2">昨天</li>
+  			<li data-index="1" class="act">今天</li>
+  		</ul>
+    </div>
+	</div>
+	<!-- 内容 start -->
+  <article class="container" id="containerId">
+    <ul class="page" type="0" id="pageId1">
+      <!-- 今天 -->
+    	<li class="index_con" data-ind="1">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav blue">奇幻</div>
+    				<div class="index_con_head_auth">花道士</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/161007/9bkpwd8rv.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">第15话 狸猫变人!狸猫变人!</div>
+    				<div class="index_con_footer_ding"><i></i>17万</div>
+    				<div class="index_con_footer_comment"><i></i>2692</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">教主，注意名声！</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/151223/itrnuetp3.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">第15话 狸猫变人!狸猫变人!</div>
+    				<div class="index_con_footer_ding"><i></i>17万</div>
+    				<div class="index_con_footer_comment"><i></i>2692</div>
+    			</div>
+    		</div>
+    	</li>
+    	<!-- 昨天 -->
+    	<li class="index_con" data-ind="2">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav blue">日常</div>
+    				<div class="index_con_head_auth">申申菌（有狐漫画）</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/161020/pse7az9g5.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">牛头不对马嘴</div>
+    				<div class="index_con_footer_ding"><i></i>8万</div>
+    				<div class="index_con_footer_comment"><i></i>1万+</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">coolchic</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170104/g1j554mq9.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">恶魔也要义务教育</div>
+    				<div class="index_con_footer_ding"><i></i>1万</div>
+    				<div class="index_con_footer_comment"><i></i>678</div>
+    			</div>
+    		</div>
+    	</li>
+    	<!-- 周五 -->
+    	<li class="index_con" data-ind="3">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav blue">恋爱</div>
+    				<div class="index_con_head_auth">barry+绘南</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170511/pd35pawh4.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">我的宠物失忆了</div>
+    				<div class="index_con_footer_ding"><i></i>3万</div>
+    				<div class="index_con_footer_comment"><i></i>100</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">一波人漫画工作室</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170116/j1ktkkube.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">鸵鸟先生</div>
+    				<div class="index_con_footer_ding"><i></i>5万</div>
+    				<div class="index_con_footer_comment"><i></i>189</div>
+    			</div>
+    		</div>
+    	</li>
+    	<!-- 周四 -->
+    	<li class="index_con" data-ind="4">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">剧情</div>
+    				<div class="index_con_head_auth">幽·灵（良筑良作）</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/151223/itrnuetp3.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">快把我哥带走</div>
+    				<div class="index_con_footer_ding"><i></i>3万</div>
+    				<div class="index_con_footer_comment"><i></i>2万</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav blue">奇幻</div>
+    				<div class="index_con_head_auth">天极焉加</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/160405/bkf4y1260.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">你好！！筋肉女</div>
+    				<div class="index_con_footer_ding"><i></i>200</div>
+    				<div class="index_con_footer_comment"><i></i>18</div>
+    			</div>
+    		</div>
+    	</li>
+    	<!-- 周三 -->
+      <li class="index_con" data-ind="5">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">Kula</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/161227/8umq3e3mp.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">贫穷父女</div>
+    				<div class="index_con_footer_ding"><i></i>10万</div>
+    				<div class="index_con_footer_comment"><i></i>2万+</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">卞丽君-</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170109/jbbctttm7.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">别闹！我想静静……</div>
+    				<div class="index_con_footer_ding"><i></i>7万</div>
+    				<div class="index_con_footer_comment"><i></i>92</div>
+    			</div>
+    		</div>
+    	</li>
+      <!-- 周二 -->
+    	<li class="index_con" data-ind="6">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">Kula</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/161227/8umq3e3mp.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">贫穷父女</div>
+    				<div class="index_con_footer_ding"><i></i>10万</div>
+    				<div class="index_con_footer_comment"><i></i>2万+</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">卞丽君-</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170109/jbbctttm7.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">别闹！我想静静……</div>
+    				<div class="index_con_footer_ding"><i></i>7万</div>
+    				<div class="index_con_footer_comment"><i></i>92</div>
+    			</div>
+    		</div>
+    	</li>
+      <!-- 周一 -->
+    	<li class="index_con" data-ind="7">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">Kula</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/161227/8umq3e3mp.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">贫穷父女</div>
+    				<div class="index_con_footer_ding"><i></i>10万</div>
+    				<div class="index_con_footer_comment"><i></i>2万+</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">卞丽君-</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170109/jbbctttm7.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">别闹！我想静静……</div>
+    				<div class="index_con_footer_ding"><i></i>7万</div>
+    				<div class="index_con_footer_comment"><i></i>92</div>
+    			</div>
+    		</div>
+    	</li>
+    </ul>
+    <ul class="page active" type="1" id="pageId2">
+      <!-- 今天 -->
+    	<li class="index_con" data-ind="1">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav blue">日常</div>
+    				<div class="index_con_head_auth">申申菌（有狐漫画）</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/161020/pse7az9g5.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">牛头不对马嘴</div>
+    				<div class="index_con_footer_ding"><i></i>8万</div>
+    				<div class="index_con_footer_comment"><i></i>1万+</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">coolchic</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170104/g1j554mq9.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">恶魔也要义务教育</div>
+    				<div class="index_con_footer_ding"><i></i>1万</div>
+    				<div class="index_con_footer_comment"><i></i>678</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">Kula</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/161227/8umq3e3mp.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">贫穷父女</div>
+    				<div class="index_con_footer_ding"><i></i>10万</div>
+    				<div class="index_con_footer_comment"><i></i>2万+</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">卞丽君-</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170109/jbbctttm7.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">别闹！我想静静……</div>
+    				<div class="index_con_footer_ding"><i></i>7万</div>
+    				<div class="index_con_footer_comment"><i></i>92</div>
+    			</div>
+    		</div>
+    	</li>
+    	<!-- 昨天 -->
+    	<li class="index_con" data-ind="2">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">Kula</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/161227/8umq3e3mp.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">贫穷父女</div>
+    				<div class="index_con_footer_ding"><i></i>10万</div>
+    				<div class="index_con_footer_comment"><i></i>2万+</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">卞丽君-</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170109/jbbctttm7.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">别闹！我想静静……</div>
+    				<div class="index_con_footer_ding"><i></i>7万</div>
+    				<div class="index_con_footer_comment"><i></i>92</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav blue">日常</div>
+    				<div class="index_con_head_auth">申申菌（有狐漫画）</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/161020/pse7az9g5.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">牛头不对马嘴</div>
+    				<div class="index_con_footer_ding"><i></i>8万</div>
+    				<div class="index_con_footer_comment"><i></i>1万+</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">coolchic</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170104/g1j554mq9.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">恶魔也要义务教育</div>
+    				<div class="index_con_footer_ding"><i></i>1万</div>
+    				<div class="index_con_footer_comment"><i></i>678</div>
+    			</div>
+    		</div>
+    	</li>
+      <!-- 周五 -->
+      <li class="index_con" data-ind="3">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav blue">恋爱</div>
+    				<div class="index_con_head_auth">barry+绘南</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170511/pd35pawh4.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">我的宠物失忆了</div>
+    				<div class="index_con_footer_ding"><i></i>3万</div>
+    				<div class="index_con_footer_comment"><i></i>100</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">一波人漫画工作室</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170116/j1ktkkube.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">鸵鸟先生</div>
+    				<div class="index_con_footer_ding"><i></i>5万</div>
+    				<div class="index_con_footer_comment"><i></i>189</div>
+    			</div>
+    		</div>
+    	</li>
+    	<!-- 周四 -->
+    	<li class="index_con" data-ind="4">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav blue">奇幻</div>
+    				<div class="index_con_head_auth">花道士</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/161007/9bkpwd8rv.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">第15话 狸猫变人!狸猫变人!</div>
+    				<div class="index_con_footer_ding"><i></i>17万</div>
+    				<div class="index_con_footer_comment"><i></i>2692</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">教主，注意名声！</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/151223/itrnuetp3.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">第15话 狸猫变人!狸猫变人!</div>
+    				<div class="index_con_footer_ding"><i></i>17万</div>
+    				<div class="index_con_footer_comment"><i></i>2692</div>
+    			</div>
+    		</div>
+    	</li>
+    	<!-- 周三 -->
+    	<li class="index_con" data-ind="5">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">剧情</div>
+    				<div class="index_con_head_auth">幽·灵（良筑良作）</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/151223/itrnuetp3.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">快把我哥带走</div>
+    				<div class="index_con_footer_ding"><i></i>3万</div>
+    				<div class="index_con_footer_comment"><i></i>2万</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav blue">奇幻</div>
+    				<div class="index_con_head_auth">天极焉加</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/160405/bkf4y1260.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">你好！！筋肉女</div>
+    				<div class="index_con_footer_ding"><i></i>200</div>
+    				<div class="index_con_footer_comment"><i></i>18</div>
+    			</div>
+    		</div>
+    	</li>
+    	<!-- 周二 -->
+    	<li class="index_con" data-ind="6">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav blue">恋爱</div>
+    				<div class="index_con_head_auth">barry+绘南</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170511/pd35pawh4.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">我的宠物失忆了</div>
+    				<div class="index_con_footer_ding"><i></i>3万</div>
+    				<div class="index_con_footer_comment"><i></i>100</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">一波人漫画工作室</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170116/j1ktkkube.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">鸵鸟先生</div>
+    				<div class="index_con_footer_ding"><i></i>5万</div>
+    				<div class="index_con_footer_comment"><i></i>189</div>
+    			</div>
+    		</div>
+    	</li>
+      <!-- 周一 -->
+    	<li class="index_con" data-ind="7">
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav blue">恋爱</div>
+    				<div class="index_con_head_auth">barry+绘南</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170511/pd35pawh4.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">我的宠物失忆了</div>
+    				<div class="index_con_footer_ding"><i></i>3万</div>
+    				<div class="index_con_footer_comment"><i></i>100</div>
+    			</div>
+    		</div>
+    		<div class="index_con">
+    			<div class="index_con_head">
+    				<div class="index_con_head_nav orange">爆笑</div>
+    				<div class="index_con_head_auth">一波人漫画工作室</div>
+    				<div class="index_con_head_more">全集 ></div>
+    			</div>
+    			<div class="index_con_center">
+    				<img src="http://f2.kkmh.com/image/170116/j1ktkkube.webp-w750.jpg"/>
+    			</div>
+    			<div class="index_con_footer">
+    				<div class="index_con_footer_title">鸵鸟先生</div>
+    				<div class="index_con_footer_ding"><i></i>5万</div>
+    				<div class="index_con_footer_comment"><i></i>189</div>
+    			</div>
+    		</div>
+    	</li>
+    </ul>
+  </article>
+	<!-- 内容 end -->
+	<div class="index_guide_scroll"></div>
+	<!-- 底部 -->
+	<div class="index_footer">
+		<ul class="index_footer_list">
+			<li class="act"><i class="index_footer_list_home"></i><span>漫画</span></li>
+			<li><i class="index_footer_list_discover"></i><span>发现</span></li>
+			<li><i class="index_footer_list_feed"></i><span>V社区</span></li>
+			<li><i class="index_footer_list_me"></i><span>我的</span></li>
+		</ul>
+	</div>
+
+  <!-- <script type="text/javascript" src="./js/jquery.min.js"></script> -->
+  <script src="./js/zepto.min.js"></script>
+  <script src="./js/fx.js"></script>
+  <script type="text/javascript" src="./js/touchslider.js"></script>
+  <script type="text/javascript" src="./js/drag-loading.js"></script>
+  <script>
+  function showToast(msg){
+    $(".toast").hide().html(msg).show();
+    var timer = setTimeout(function(){$(".toast").hide()},3e3);
+  }
+  function updateNavPos(index){
+    var msg = $(".index_button.current>.text").html()+","+$(".index_nav_date>li").eq($(".index_nav_date>li").length-index-1).html();
+    showToast(msg);
+
+    $(".page.active").css("height",$(".page.active>li.index_con").eq(index).height());
+
+    var flb_w=0;
+    var fl_w=$(".index_nav>.wrap").width();
+    var idx = $(".index_nav_date li").length-index-1;
+    fnl_x =  parseInt($(".index_nav_date li").eq(idx).position().left);
+    nav_w=$(".index_nav_date li").eq(idx).width();
+    // $(".sideline").stop(true);
+    // $(".sideline").animate({left:$(".find_nav_list li").eq(this.p).position().left},300);
+    // $(".sideline").animate({width:nav_w},100);
+    // $(".index_nav_date li").eq(this.p).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+    var fn_w = ($(".index_nav").width() - nav_w) / 2;
+
+    var fnl_l;
+    if (fnl_x <= fn_w) {
+      fnl_l = 0;
+    } else if (fn_w - fnl_x <= flb_w - fl_w) {
+      fnl_l = flb_w - fl_w;
+    } else {
+      fnl_l = fn_w - fnl_x;
+    }
+    $(".index_nav>.wrap").animate({
+      "left" : fnl_l
+    }, 300);
+  }
+  var swiper = null;
+  var dataIndex=0,pageCount=$(".page.active>.index_con").length;
+  var opt = {
+   id:"pageId2",
+   'auto':'-1',
+   fx:'ease-out',
+   direction:'left',
+   speed:600,
+   timeout:5000,
+   'before':function(index){
+     // 导航切换
+    $(".index_nav_date>li").removeClass("act");
+    var idx = $(".index_nav_date>li").length-index-1;
+    $(".index_nav_date>li").eq(idx).addClass("act");
+
+    updateNavPos(index);
+    }
+  }
+  function initSwiper(id){
+    opt.id=id;
+    if(swiper){
+      swiper.updateId(opt);
+    }else{
+      swiper=new TouchSlider(opt);
+    }
+  }
+
+  function initNav(){
+    updateNavPos($(".index_nav li.act").attr("data-index")-1);
+    $(".index_nav li").on('click', function(){
+    	updateNavPos($(this).attr("data-index")-1);
+      dataIndex= parseInt($(this).attr('data-index'))-1;
+      $(".page.active").css("left",-(dataIndex*100)+"%");
+    });
+
+    var fl_w=$(".index_nav>.wrap").width();
+    var flb_w=0;
+    $(".index_nav>.wrap").on('touchstart', function (e) {
+
+    	// var touch1 = e.originalEvent.targetTouches[0];
+      var touch1 = e.touches[0];
+    	x1 = touch1.pageX;
+    	y1 = touch1.pageY;
+    	ty_left = parseInt($(this).css("left"));
+    });
+    $(".index_nav>.wrap").on('touchmove', function (e) {
+    	// var touch2 = e.originalEvent.targetTouches[0];
+      var touch2 = e.touches[0];
+    	var x2 = touch2.pageX;
+    	var y2 = touch2.pageY;
+    	if(ty_left + x2 - x1>=0){
+    		$(this).css("left", 0);
+    	}else if(ty_left + x2 - x1<=flb_w-fl_w){
+    		$(this).css("left", flb_w-fl_w);
+    	}else{
+    		$(this).css("left", ty_left + x2 - x1);
+    	}
+    	if(Math.abs(y2-y1)>0){
+    		e.preventDefault();
+    	}
+    });
+    // 获取当前导航类型
+    var type = $(".index_button.current").attr("type");
+    // 内容区域切换，真实环境这步应该loading，而不是切换page
+    $(".page").removeClass("active").eq(type).addClass("active");
+  }
+  function initCurrentPage(){
+  	$('.index_nav_date').children().each(function(){
+  		$(this).click(function(){
+  			$('.index_nav_date').children().each(function(){
+  				$(this).attr('class','');
+  				$('.data-index').attr('style','display:none;');
+  			});
+  			$(this).attr('class','act');
+
+        dataIndex= parseInt($(this).attr('data-index'))-1;
+
+        $(".page.active").css("left",-(dataIndex*100)+"%")
+  		});
+  	});
+  }
+  $(function(){
+    // 下拉更新
+    new DragLoading($('#loading'), {
+        onReload: function () {
+            var self = this;
+            setTimeout(function () {
+                showToast("Loading...")
+                self.origin();
+            }, 2000* Math.random());
+        }
+    });
+
+    initNav();
+    initSwiper($(".page.active").attr("id"));
+    initCurrentPage();
+    //导航切换事件
+    $("nav>.index_button").on("click",function(evt){
+      $("nav>.index_button").removeClass("current");
+      $(this).addClass("current");
+
+      // 获取当前导航类型
+      var type = $(this).attr("type");
+
+      // 内容区域切换，真实环境这步应该loading，而不是切换page
+      $(".page").removeClass("active").eq(type).addClass("active");
+
+      //重新赋值
+      dataIndex=0,pageCount=$(".page.active>.index_con").length;
+
+      $(".index_nav_date li").removeClass("act");
+      $(".index_nav_date li:last-child").addClass("act");
+      initNav();
+      // swiper切换块id
+      initSwiper($(".page.active").attr("id"));
+
+      $(".page.active>.index_con:first-child").css("margin-left",-(dataIndex*100)+"%");
+    });
+
+  });
+  var throttle = function(delay, action){
+    var last = 0;
+    return function(){
+      var curr = +new Date()
+      if (curr - last > delay){
+        action.apply(this, arguments)
+        last = curr
+      }
+    }
+  }
+  </script>
+</body>
+</html>
